@@ -1,0 +1,9 @@
+id: co_best_picks_config
+plugin_id: best_picks_resource
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
