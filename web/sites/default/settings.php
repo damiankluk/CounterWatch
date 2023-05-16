@@ -290,7 +290,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'jW1cJk7MNtNR2B3JEIKAkVDvvyRL0yx9zJW2L1ZOKmYB92GF4sDBKMhRg75CXvGy4_rvM0rrQQ';
 
 /**
  * Deployment identifier.
@@ -779,3 +779,15 @@ if (file_exists(__DIR__ . '/settings.ddev.php') && getenv('IS_DDEV_PROJECT') == 
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $config['system.logging']['error_level'] = 'verbose';
+$databases['default']['default'] = [
+  'database' => getenv('MYSQL_DATABASE'),
+  'username' => getenv('MYSQL_USER'),
+  'password' => getenv('MYSQL_PASSWORD'),
+  'prefix' => '',
+  'host' => getenv('MYSQL_HOST'),
+  'port' => getenv('MYSQL_PORT'),
+  'namespace' => getenv('MYSQL_NAMESPACE'),
+  'driver' => getenv('MYSQL_DRIVER'),
+];
+$settings['hash_salt'] = getenv('HASH_SALT');
+$config_directories['sync'] = getenv('CONFIG_SYNC_DIRECTORY');
