@@ -19,6 +19,7 @@
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drupal/dotenv": "^1.2",
         "drupal/gin": "^3.0@RC",
         "drupal/restui": "^1.21",
         "drush/drush": "^11.5"
@@ -37,6 +38,9 @@
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
         "sort-packages": true
+    },
+    "autoload": {
+      "files": ["load.environment.php"]
     },
     "extra": {
         "drupal-scaffold": {
